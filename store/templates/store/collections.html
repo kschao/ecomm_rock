@@ -1,0 +1,23 @@
+{% extends 'store/layouts/main.html'  %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Products</h1>  
+            <div class="row">
+            {% for item in product%}
+                <div class="col-cd-4">
+                    <div class="card">
+                        <div class="product-image">
+                            <img src="{{ item.image.url }}" alt="Products image" />
+                        </div>                
+                        <h4> {{ item.name }} </h4>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
