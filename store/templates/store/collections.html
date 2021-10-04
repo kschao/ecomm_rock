@@ -7,10 +7,10 @@
             <h1>Collections</h1>  
             <hr>
             <div class="row">
-            {% for item in product%}
+            {% for item in category%}
                 <div class="col-cd-3">
                     <div class="card">
-                        <div class="product-image">
+                        <div class="category-image">
                             <img src="{{ item.image.url }}" alt="Category image" class="w=100"/>
                         </div>                
                         <h4 class="text-center"> {{ item.name }} </h4>

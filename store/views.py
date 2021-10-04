@@ -10,6 +10,6 @@ def home(request):
     return render(request, "store/index.html")
 
 def collections(request):
-    category = Product.objects.filter(id=0)
-    context = { 'products': Product}
+    category = Category.objects.filter(id=0)
+    context = { 'category': category}
     return render(request, "store/collections.html", context)

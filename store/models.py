@@ -37,7 +37,8 @@ class Product(models.Model):
 class ProductCategory(models.Model):
     product_id = models.CharField(null=True, max_length=100)
     customer_id = models.CharField(null=True, max_length=100)
-    pass
+    def __str__(self):
+        return self.product_id + ' ' +self.customer_id
 
 class Customer(models.Model):
     first_name = models.CharField(max_length=150)
@@ -57,11 +58,14 @@ class Order(models.Model):
     order_email = models.CharField(max_length=100)
     order_date = models.DateField()
     order_status = models.BooleanField(default=False, help_text="0-default, 1=Hidden")
-    pass
+    
+    def __str__(self):
+        return self.customer_id
 
 class OrderDetails(models.Model):
 	product_id = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
 	order_id = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
 original_price = models.FloatField(null=False, blank=False)
 quantity = models.IntegerField(null=False, blank=False)
-pass
+def __str__(self):
+    return self.product_id + ' ' + self.order_id
