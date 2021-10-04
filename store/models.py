@@ -17,7 +17,7 @@ def get_file_path(request, filename):
 
 class Category(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False)
-    description = models.TextField(max_length=500, null=False, blank=False)
+    description = models.TextField(max_length=250, null=False, blank=False)
     image = models.ImageField(upload_to=get_file_path, null=True, blank=True)
 
     def __str__(self):
@@ -27,8 +27,8 @@ class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    description = models.TextField(max_length=500, null=False, blank=False)
-    image = models.ImageField(upload_to=get_file_path, null=True, blank=True)
+    description = models.TextField(max_length=250, null=False, blank=False)
+    product_image = models.ImageField(upload_to=get_file_path, null=True, blank=True)
 
     def __str__(self):
         return self.name

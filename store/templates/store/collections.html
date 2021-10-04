@@ -5,14 +5,15 @@
     <div class="row">
         <div class="col-md-12">
             <h1>Products</h1>  
+            <hr>
             <div class="row">
             {% for item in product%}
-                <div class="col-cd-4">
+                <div class="col-cd-3">
                     <div class="card">
                         <div class="product-image">
-                            <img src="{{ item.image.url }}" alt="Products image" />
+                            <img src="{{ item.image.url }}" alt="Products image" class="w=100"/>
                         </div>                
-                        <h4> {{ item.name }} </h4>
+                        <h4 class="text-center"> {{ item.name }} </h4>
                     </div>
                 </div>
             {% endfor %}
