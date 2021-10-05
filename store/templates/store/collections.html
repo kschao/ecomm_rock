@@ -10,11 +10,14 @@
             {% for item in category%}
                 <div class="col-cd-3">
                     <div class="card">
-                        <div class="category-image">
-                            <img src="{{ item.image.url }}" alt="Category image" class="w=100"/>
-                        </div>                
-                        <h4 class="text-center"> {{ item.name }} </h4>
-                    </div>
+                        <a herf="{% url 'collections' item.name %}" >
+                            <div class="card=body">
+                                <div class="category-image">
+                                    <img src="{{ item.image.url }}" alt="Category image" class="w=100"/>
+                                </div>                
+                                <h4 class="text-center"> {{ item.name }} </h4>
+                            </div>
+                        </div>
                 </div>
             {% endfor %}
         </div>
